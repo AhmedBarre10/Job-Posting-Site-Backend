@@ -44,7 +44,7 @@ router.post('/', (req,res)=>{
         subjects,
         profileimage
     })
-tutor.save().then(()=>res.json('sucess'))
+tutor.save().then(()=>res.json('sucess it worked'))
 .catch(err=> res.json(err))
 })
 module.exports = router;

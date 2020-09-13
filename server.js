@@ -29,7 +29,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const PORT = process.env.PORT || 5000;
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.json('Hello World! welcome ')
 })
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}s`));
