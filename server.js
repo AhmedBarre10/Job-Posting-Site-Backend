@@ -15,7 +15,7 @@ connectDB();
 app.use(express.json());
 
 // Define Routes
-app.use('/api', route);
+app.use('/api/tutor', route);
 
 
 // Serve static assets in production
