@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const EmailSchema = new mongoose.Schema({
 
 email:{
-   
      type:String,
      require:true
     },
