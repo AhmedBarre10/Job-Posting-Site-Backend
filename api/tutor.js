@@ -28,6 +28,9 @@ router.get('/email',(req,res)=>{
         res.json(info)
     })
 })
+router.get('/',(req,res)=>{
+    res.json('welcome')
+})
 
 router.get('/:id',(req,res)=>{
     Tutor.findById(req.params.id).then(ress=>{
