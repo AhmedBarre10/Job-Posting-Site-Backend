@@ -5,6 +5,8 @@ const path = require('path');
 const routee = require('./api/tutor')
 const app = express();
 var cors = require('cors')
+
+const router = express.Router();
 app.use(cors())
 const Tutor = require('../model/tutor')
 const Email = require('../model/email')
@@ -22,7 +24,7 @@ app.use(express.json());
 
 // Serve static assets in production
 
-app.post('/',(req,res)=>{
+router.post('/',(req,res)=>{
 
   const{email,password} = req.body
 
@@ -39,3 +41,5 @@ app.post('/',(req,res)=>{
 // })
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}s`));
+
+module.exports = router;
