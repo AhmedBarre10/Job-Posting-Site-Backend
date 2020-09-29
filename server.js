@@ -2,8 +2,8 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const path = require('path');
-const route = require('./api/tutor')
 const app = express();
+const auth = require("./middleware/auth")
 var cors = require('cors')
 app.use(cors())
 const PORT = process.env.PORT || 5000;
@@ -13,9 +13,15 @@ connectDB();
 
 // Init Middleware
 app.use(express.json());
+app.get("/", express.static(path.join(__dirname, "./public")));
 
 // Define Routes
-app.use('/api/tutor', route);
+app.use('/api/StudentSignUp', require('./api/StudentSignUp'));
+app.use('/api/StudentLogin', require('./api/StudentLogin'));
+app.use('/api/Jobs', require('./api/Jobs'));
+
+
+
 
 
 // Serve static assets in production

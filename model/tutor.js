@@ -2,15 +2,20 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const TutorSchema = new mongoose.Schema({
-    firstName:{
+   name:{
         type: String,
         required:true,
 
     },
-    lastName:{
+    email:{
         type: String,
         required:true,
     },
+    password:{
+    type:String,
+    required:true
+    },
+
     subjects:{
         type:String,
          required: true
