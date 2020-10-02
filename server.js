@@ -18,7 +18,7 @@ app.get("/", express.static(path.join(__dirname, "./public")));
 // Define Routes
 app.use('/api/StudentSignUp', require('./api/StudentSignUp'));
 app.use('/api/StudentLogin', require('./api/StudentLogin'));
-app.use('/api/Jobs', require('./api/Jobs'));
+app.use('/api/Jobs', auth, require('./api/Jobs'));
 
 
 
